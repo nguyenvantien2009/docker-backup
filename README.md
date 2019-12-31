@@ -1,4 +1,4 @@
-# docker-backup
+# Docker Backup
 
 backup a docker container including its volumes
 
@@ -22,14 +22,23 @@ backup a docker container including its volumes
 
 ## Example
 
-``docker run --name some-ghost -p 8080:2368 -d ghost``
+Run docker image.
 
-``docker-backup some-ghost /backups --name ghost-backup``
+```
+docker run --name some-ghost -p 8080:2368 -d ghost
+```
 
-``docker-backup restore /backups/ghost-backup_image.tar``
+Backup Docker
 
-``docker-backup restore /backups/ghost-backup_create.sh``
+```
+docker-backup some-ghost /backups --name ghost-backup
+```
 
-``docker-backup restore /backups/ghost-backup_volume_xx.tar ghost-backup``
+Restore Docker
 
-``docker start ghost-backup``
+```
+docker-backup restore /backups/ghost-backup_image.tar
+docker-backup restore /backups/ghost-backup_create.sh
+docker-backup restore /backups/ghost-backup_volume_xx.tar ghost-backup
+docker start ghost-backup
+```
